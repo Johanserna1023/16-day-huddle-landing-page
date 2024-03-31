@@ -1,0 +1,188 @@
+/* -----------------
+Tabla de contenidos:
+--------------------
+1. Fuente ................ 11
+2. Variables ............. 17
+3. Estilos generales ..... 32
+-------------------- 
+*/
+
+/* ----- Fuente ----- */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth@0,75..100;1,75..100&display=swap");
+
+/* ----- Variables ----- */
+:root {
+  /* ### Colores primarios */
+  --Violet: hsl(257, 40%, 49%);
+  --Soft-Magenta: hsl(300, 69%, 71%);
+
+  /* ### Tipografia */
+  /* ### Headings */
+  /* - Family: [Poppins](https://fonts.google.com/specimen/Poppins)
+- Weights: 400, 600 */
+
+  /* ### Body
+- Family: [Open Sans](https://fonts.google.com/specimen/Open+Sans)
+- Weights: 400 */
+}
+
+/* ----------------------------- */
+/* ----- Estilos generales ----- */
+/* ----------------------------- */
+body {
+  background-image: url(../images/bg-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  background-color:var(--Violet);  
+  font-family: "Open Sans", sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin: 0 2rem;
+  
+}
+
+/* Logo */
+.header img {
+  width: 170px;
+  padding-bottom: 20px;
+}
+
+/* Main */
+.main {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-text h1 {
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: 36px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.hero-text a {
+  display: inline-block;
+  font-family: "Poppins", sans-serif;
+  background: #fff;
+  color: var(--Violet);
+  padding: 13px 50px;
+  border-radius: 25px;
+  text-decoration: none;
+  box-shadow: 0 8px 17px -8px rgba(0, 0, 0, 0.8);
+  transition: all 0.5s ease;
+}
+
+.hero-text a:hover {
+  background-color: var(--Soft-Magenta);
+  color: white;
+}
+
+/* Social */
+.social {
+
+  text-align: right;
+}
+
+.social a i {
+  color: #fff;
+  position: relative;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.social a:not(:first-child) {
+  margin-left: 2rem;
+}
+
+.social a:nth-child(2) {
+  margin-left: 2.4rem;
+}
+
+.social a i::after {
+  content: "";
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+  left: -14px;
+  bottom: -13px;
+  transition: all 0.3s ease;
+}
+
+.social a:hover i {
+  color: var(--Soft-Magenta);
+}
+
+.social a i:hover::after {
+  border-color: var(--Soft-Magenta);
+}
+
+/* Medias queries */
+
+@media only screen and (max-width: 1080px) {
+  .hero-img img {
+    width: 500px;
+}
+
+  .social{
+    margin-right: 50px;
+  }
+}
+
+
+@media only screen and  (min-width: 374px) and (max-width: 768px) {
+  body {
+    background-image: url(../images/bg-mobile.svg);
+  }
+
+  .hero-img img {
+    width: 300px;
+    height: auto;
+    }
+  .main {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .social {
+    text-align: center;
+    margin-top: 50px;
+    margin-right: 0px;
+  }
+
+  .hero-text h1 {
+    line-height: 1.5;
+    font-size: 26px;
+  }
+
+  .hero-text a {
+    padding: 10px 70px;
+  }
+}
